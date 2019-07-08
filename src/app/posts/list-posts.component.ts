@@ -8,10 +8,19 @@ import { PostService } from "src/services/post.service";
 })
 export class ListPostsComponent implements OnInit {
   public posts = [];
-
-  constructor(private _postService: PostService) {}
+  config: any;
+  constructor(private _postService: PostService) {
+    this.config = {
+      itemsPerPage: 10,
+      currentPage: 1,
+      totalItems: this.posts.length
+    };
+  }
 
   ngOnInit() {
     this._postService.getPost().subscribe(data => (this.posts = data));
+  }
+  pageChanged(event) {
+    this.config.currentPage = event;
   }
 }

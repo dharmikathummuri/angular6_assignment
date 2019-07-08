@@ -1,12 +1,13 @@
-<table>
-  <thead>
+<table class="table">
+  <tbody *ngFor="let post of posts | paginate: config">
     <tr>
-      <th>Posts</th>
-    </tr>
-  </thead>
-  <tbody *ngFor="let post of posts">
-    <tr>
-      <td>{{ post.title }}</td>
+      <td>
+        <strong>{{ post.title }}</strong>
+      </td>
+      <td>
+        <button class="btn btn-primary">View Full Post</button>
+      </td>
     </tr>
   </tbody>
 </table>
+<pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>

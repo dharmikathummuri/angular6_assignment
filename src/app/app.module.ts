@@ -8,10 +8,16 @@ import { ListPostsComponent } from "./posts/list-posts.component";
 import { HttpClientModule } from "@angular/common/http";
 import { UserService } from "src/services/user.service";
 import { PostService } from "src/services/post.service";
+import { NgxPaginationModule } from "ngx-pagination";
 
 @NgModule({
   declarations: [AppComponent, ListUsersComponent, ListPostsComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    NgxPaginationModule
+  ],
   providers: [UserService, PostService],
   bootstrap: [AppComponent]
 })
