@@ -9,8 +9,7 @@ import { Location } from "@angular/common";
   styleUrls: ["./display-user.component.scss"]
 })
 export class DisplayUserComponent implements OnInit {
-  private selectedUserId: number;
-  public user: any;
+  private user;
   constructor(
     private _userService: UserService,
     private _route: ActivatedRoute,
@@ -18,10 +17,11 @@ export class DisplayUserComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.selectedUserId = +this._route.snapshot.paramMap.get("id");
-    this._userService
-      .getUserDetail(this.selectedUserId)
-      .subscribe(data => (this.user = data));
+    const user_id = this._route.snapshot.paramMap.get("id");
+
+    this._userService.getUserDetail(user_id).subscribe(data => {
+      this.user = data;
+    });
   }
   goBack() {
     this.location.back();
