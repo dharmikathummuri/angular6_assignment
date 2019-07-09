@@ -7,7 +7,12 @@ import { Observable } from "rxjs";
 export class UserService {
   constructor(private http: HttpClient) {}
   getUsers(): Observable<IUser[]> {
-    console.log("in hereeee");
     return this.http.get<IUser[]>("https://jsonplaceholder.typicode.com/users");
+  }
+
+  getUserDetail(id): Observable<IUser[]> {
+    return this.http.get<IUser[]>(
+      `https://jsonplaceholder.typicode.com/users/${id}`
+    );
   }
 }
