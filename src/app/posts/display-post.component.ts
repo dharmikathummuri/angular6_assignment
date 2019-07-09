@@ -9,8 +9,7 @@ import { PostService } from "src/services/post.service";
   styleUrls: ["./display-post.component.scss"]
 })
 export class DisplayPostComponent implements OnInit {
-  private selectedPostId: number;
-  private userPost: any;
+  userPost = {};
   constructor(
     private _postService: PostService,
     private _route: ActivatedRoute,
@@ -18,9 +17,9 @@ export class DisplayPostComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.selectedPostId = +this._route.snapshot.paramMap.get("id");
+    const post_id = this._route.snapshot.paramMap.get("id");
     this._postService
-      .getPostDetail(this.selectedPostId)
+      .getPostDetail(post_id)
       .subscribe(data => (this.userPost = data));
   }
 
