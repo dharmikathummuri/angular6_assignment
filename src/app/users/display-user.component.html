@@ -1,3 +1,54 @@
-<div class="container">
-  <h1>{{ user.name }}</h1>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Details for User Id : {{ user.id }}</h3>
+  </div>
+  <div class="panel-body">
+    <table class="table">
+      <tbody>
+        <tr>
+          <td><strong>NAME :</strong></td>
+          <td>{{ user.name }}</td>
+        </tr>
+        <tr>
+          <th scope="row">USER NAME :</th>
+          <td>{{ user.username }}</td>
+        </tr>
+        <tr>
+          <th scope="row">EMAIL :</th>
+          <td>{{ user.email }}</td>
+        </tr>
+        <tr>
+          <th scope="row">ADDRESS :</th>
+          <td>
+            <p>
+              {{ user.address.street }} &nbsp;{{ user.address.suite }} &nbsp;{{
+                user.address.city
+              }}
+              &nbsp;<br />
+              ZIP: {{ user.address.zipcode }} &nbsp;
+              {{ user.address.geo.lat }}&nbsp; {{ user.address.geo.lng }}.
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">PHONE :</th>
+          <td>{{ user.phone }}</td>
+        </tr>
+        <tr>
+          <th scope="row">WEBSITE :</th>
+          <td>{{ user.website }}</td>
+        </tr>
+        <tr>
+          <th scope="row">COMPANY :</th>
+          <td>
+            <p>
+              {{ user.company.name }}<br />
+              {{ user.company.catchPhrase }}<br />
+              {{ user.company.bs }}
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

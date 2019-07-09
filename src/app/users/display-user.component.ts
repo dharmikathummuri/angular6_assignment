@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { UserService } from "src/services/user.service";
-import { IUser } from "../user";
 import { ActivatedRoute } from "@angular/router";
 
 @Component({
@@ -16,9 +15,9 @@ export class DisplayUserComponent implements OnInit {
     private _route: ActivatedRoute
   ) {}
 
-  async ngOnInit() {
+  ngOnInit() {
     this.selectedUserId = +this._route.snapshot.paramMap.get("id");
-    await this._userService
+    this._userService
       .getUserDetail(this.selectedUserId)
       .subscribe(data => (this.user = data));
   }
