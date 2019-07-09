@@ -1,0 +1,20 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Post ID: {{ userPost.id }}</h3>
+  </div>
+  <div class="panel-body">
+    <table class="table">
+      <tbody>
+        <tr>
+          <th scope="row">TITLE :</th>
+          <td>{{ userPost.title }}</td>
+        </tr>
+        <tr>
+          <th scope="row">BODY :</th>
+          <td>{{ userPost.body }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<button class="btn btn-primary" (click)="goBack()">Go back</button>

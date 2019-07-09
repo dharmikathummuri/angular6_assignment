@@ -3,6 +3,7 @@ import { Routes, RouterModule } from "@angular/router";
 import { ListUsersComponent } from "./users/list-users.component";
 import { ListPostsComponent } from "./posts/list-posts.component";
 import { DisplayUserComponent } from "./users/display-user.component";
+import { DisplayPostComponent } from "./posts/display-post.component";
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: "display-user/:id",
     component: DisplayUserComponent
+  },
+  {
+    path: "display-post/:id",
+    component: DisplayPostComponent
   },
   { path: "", redirectTo: "list-users", pathMatch: "full" }
 ];

@@ -10,9 +10,10 @@ import { UserService } from "src/services/user.service";
 import { PostService } from "src/services/post.service";
 import { NgxPaginationModule } from "ngx-pagination";
 import { DisplayUserComponent } from './users/display-user.component';
+import { DisplayPostComponent } from './posts/display-post.component';
 
 @NgModule({
-  declarations: [AppComponent, ListUsersComponent, ListPostsComponent, DisplayUserComponent],
+  declarations: [AppComponent, ListUsersComponent, ListPostsComponent, DisplayUserComponent, DisplayPostComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { PostService } from "src/services/post.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-list-posts",
@@ -9,7 +10,7 @@ import { PostService } from "src/services/post.service";
 export class ListPostsComponent implements OnInit {
   public posts = [];
   config: any;
-  constructor(private _postService: PostService) {
+  constructor(private _postService: PostService, private _router: Router) {
     this.config = {
       itemsPerPage: 10,
       currentPage: 1,
@@ -22,5 +23,8 @@ export class ListPostsComponent implements OnInit {
   }
   pageChanged(event) {
     this.config.currentPage = event;
+  }
+  onClick(id) {
+    this._router.navigateByUrl(`display-post/${id}`);
   }
 }

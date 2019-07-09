@@ -5,7 +5,9 @@
         <strong>{{ post.title }}</strong>
       </td>
       <td>
-        <button class="btn btn-primary">View Full Post</button>
+        <div (click)="onClick(post.id)">
+          <button class="btn btn-primary">View Full Post</button>
+        </div>
       </td>
     </tr>
   </tbody>

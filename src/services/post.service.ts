@@ -9,4 +9,9 @@ export class PostService {
   getPost(): Observable<IPost[]> {
     return this.http.get<IPost[]>("https://jsonplaceholder.typicode.com/posts");
   }
+  getPostDetail(id): Observable<IPost[]> {
+    return this.http.get<IPost[]>(
+      `https://jsonplaceholder.typicode.com/posts/${id}`
+    );
+  }
 }
