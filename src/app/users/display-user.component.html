@@ -1,55 +1,59 @@
-<div class="panel panel-primary">
-  <div class="panel-heading">
-    <h3 class="panel-title">Details for User Id : {{ user.id }}</h3>
-  </div>
-  <div class="panel-body">
-    <table class="table">
-      <tbody>
-        <tr>
-          <th scope="row">NAME :</th>
-          <td>{{ user.name }}</td>
-        </tr>
-        <tr>
-          <th scope="row">USER NAME :</th>
-          <td>{{ user.username }}</td>
-        </tr>
-        <tr>
-          <th scope="row">EMAIL :</th>
-          <td>{{ user.email }}</td>
-        </tr>
-        <tr>
-          <th scope="row">ADDRESS :</th>
-          <td>
-            <p>
-              {{ user.address.street }} &nbsp;{{ user.address.suite }} &nbsp;{{
-                user.address.city
-              }}
-              &nbsp;<br />
-              ZIP: {{ user.address.zipcode }} &nbsp;
-              {{ user.address.geo.lat }}&nbsp; {{ user.address.geo.lng }}.
-            </p>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">PHONE :</th>
-          <td>{{ user.phone }}</td>
-        </tr>
-        <tr>
-          <th scope="row">WEBSITE :</th>
-          <td>{{ user.website }}</td>
-        </tr>
-        <tr>
-          <th scope="row">COMPANY :</th>
-          <td>
-            <p>
-              {{ user.company.name }}<br />
-              {{ user.company.catchPhrase }}<br />
-              {{ user.company.bs }}
-            </p>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+<div class="row">
+  <div class="col-md-6 col-md-offset-0">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">Details for User Id : {{ user.id }}</h3>
+      </div>
+      <div class="panel-body">
+        <table class="table">
+          <tbody>
+            <tr>
+              <th scope="row">NAME :</th>
+              <td>{{ user.name }}</td>
+            </tr>
+            <tr>
+              <th scope="row">USER NAME :</th>
+              <td>{{ user.username }}</td>
+            </tr>
+            <tr>
+              <th scope="row">EMAIL :</th>
+              <td>{{ user.email }}</td>
+            </tr>
+            <tr>
+              <th scope="row">ADDRESS :</th>
+              <td>
+                <p>
+                  {{ user.address.street }} &nbsp;{{
+                    user.address.suite
+                  }}
+                  &nbsp;{{ user.address.city }} &nbsp;<br />
+                  ZIP: {{ user.address.zipcode }} &nbsp;
+                  {{ user.address.geo.lat }}&nbsp; {{ user.address.geo.lng }}.
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">PHONE :</th>
+              <td>{{ user.phone }}</td>
+            </tr>
+            <tr>
+              <th scope="row">WEBSITE :</th>
+              <td>{{ user.website }}</td>
+            </tr>
+            <tr>
+              <th scope="row">COMPANY :</th>
+              <td>
+                <p>
+                  {{ user.company.name }}<br />
+                  {{ user.company.catchPhrase }}<br />
+                  {{ user.company.bs }}
+                </p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <button class="btn btn-primary" (click)="goBack()">Go back</button>
   </div>
 </div>
-<button class="btn btn-primary" (click)="goBack()">Go back</button>

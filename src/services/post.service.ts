@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
-import { IPost } from "src/app/post";
+import { IPost } from "src/app/interfaces/post";
 
 @Injectable()
 export class PostService {
