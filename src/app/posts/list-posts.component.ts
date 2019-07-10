@@ -46,30 +46,32 @@ export class ListPostsComponent implements OnInit {
   }
   showForm() {
     this.displayForm = this.displayForm == true ? false : true;
+    this.success = false;
+    this.clearFormData();
   }
   validateInput(data) {
-    let letters = /^[0-9a-zA-Z]+$/;
+    let letters = /^[a-z\d\-_\s]+$/i;
     let condition = true;
     if (data.title.length > 24 || data.body.length > 50) {
       this.errorMessage.push(
-        "Please make sure that title shoul be less than 24 characters and post should be less than 50 characters!!"
+        "Please make sure that title should be less than 24 characters and post should be less than 50 characters!!"
       );
       condition = false;
     }
     if (!data.title.match(letters)) {
       this.errorMessage.push(
-        "only enter alpha numeric values in the title box!!"
+        "Only enter alpha numeric values in the title box!!"
       );
       condition = false;
     }
     if (data.title.length == 0 || data.body.length == 0) {
-      this.errorMessage.push("Do not submit until you will the form!!");
+      this.errorMessage.push("Please fill the form details before submitting");
       condition = false;
     }
-    this.errorMessage = this.errorMessage.slice(0, 3);
     return condition;
   }
   savePost(e) {
+    this.errorMessage = [];
     e.preventDefault();
     const formValidated = this.validateInput(this.postData);
     if (formValidated) {
